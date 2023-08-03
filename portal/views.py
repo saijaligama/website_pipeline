@@ -27,6 +27,11 @@ bp = Blueprint('view', __name__, url_prefix='/uncg_math', template_folder="./tem
 def home():
     if request.method == "GET":
         return render_template("home.html")
+    
+#@bp.route('/', methods=["GET", "POST"])
+#def home():
+#    if request.method == "GET":
+#        return render_template("home.html")
 
 
 @bp.route('/geometry', methods=["GET", "POST"])
@@ -56,6 +61,7 @@ def sequences():
             return finl_out
         elif type == 'Arithmetic Sequence':
             print('Geometric', data)
+            print("hi")
             final_output_ = generat_arithmetic_sequence(data)
             print('final_output_',final_output_)
             return final_output_
